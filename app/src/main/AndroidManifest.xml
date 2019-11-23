@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ir.jalambadani.morteza.proxy">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+    <uses-sdk android:minSdkVersion="14"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_app_leaf"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon_app_leaf"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!--<service android:name=".MyVpnService"-->
+            <!--android:permission="android.permission.BIND_VPN_SERVICE">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.net.VpnService"/>-->
+            <!--</intent-filter>-->
+        <!--</service>-->
+
+        <service android:name=".ToyVpnService"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+        </service>
+
+
+    </application>
+
+</manifest>
